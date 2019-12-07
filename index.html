@@ -61,10 +61,13 @@ miformulario.style.overflow="hidden"
 document.body.style.overflow="hidden"
 document.body.appendChild(miformulario)
 
+document.onscroll=controlraton
+
 var miformulariocontrol=document.createElement('input')
-//miformulariocontrol.onmousedown=controlraton
+miformulariocontrol.onscroll=controlraton
 miformulariocontrol.onmousemove=controlraton
-miformulariocontrol.onclick=controlraton
+miformulariocontrol.onmousedown=controlraton
+
 miformulariocontrol.type='button'
 miformulariocontrol.name="miformulariocontrol"
 miformulariocontrol.id='b2'
@@ -130,7 +133,7 @@ if (e.keyCode==38){dire[0]=4;return}
 function controlraton(e){
 ry=e.offsetY
 rx=e.offsetX
-
+//alert("ha funcionado")
 if (rx>=50 && rx<=100 && ry>=50 && ry<=100){return}
 
 a1y=0
