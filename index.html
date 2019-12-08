@@ -154,19 +154,18 @@ function controlraton(e){
 //e.preventDefault();
 
 
-//posteriormente asignamos el manejador de eventos lo cual
-// se hace de manera convencional.
-//elementoTouch.addEventListener('touchstart', function(event){
-//Comprobamos si hay varios eventos del mismo tipo
-if (e.targetTouches.length == 1) { 
-var touch = event.targetTouches[0]; 
+
+//if (e.targetTouches.length == 1) { 
+var touch = e.targetTouches[0]; 
 // con esto solo se procesa UN evento touch
-alert(" se ha producido un touchstart en las siguientes cordenas: X " + touch.clientX + " en Y " + touch.clientY);
-}
-
-ry=touch.clienty
-rx=touch.clientX
-
+//alert(" se ha producido un touchstart en las siguientes cordenas: X " + touch.clientX + " en Y " + touch.clientY);
+//}
+ry=touch.clientY-miformulariocontrol.offsetTop
+rx=touch.clientX-miformulariocontrol.offsetLeft
+//ry=touch.clientY
+//rx=touch.clientX
+//ry=e.clientY-miformulariocontrol.offsetTop
+//rx=e.clientX-miformulariocontrol.offsetLeft
 
 //ry=e.offsetY
 //rx=e.offsetX
