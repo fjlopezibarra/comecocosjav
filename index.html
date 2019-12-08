@@ -64,8 +64,8 @@ document.body.appendChild(miformulario)
 
 
 
-document.addEventListener('touchmove', controlraton, { passive: false });
-document.body.addEventListener('touchmove', controlraton, { passive: false });
+//document.addEventListener('touchmove', controlraton, { passive: false });
+//document.body.addEventListener('touchmove', controlraton, { passive: false });
 
 
 
@@ -109,9 +109,19 @@ boton1.style.visibility="hidden"
 dispositivo=1
 if (mensaje==0){mensaje=1;alert("!ATENCION! Solo use este juego si esta conectado a una red Wifi. El uso con datos puede incurrir en gastos")}
 tecla1=1000;tecla2=1000;son=1;comenzar=setInterval(iniciojuego,200)
-miformulariocontrol.onmousemove=controlraton
-miformulariocontrol.onmousedown=controlraton
-miformulariocontrol.onclick=controlraton
+//miformulariocontrol.onmousemove=controlraton
+//miformulariocontrol.onmousedown=controlraton
+//miformulariocontrol.onclick=controlraton
+miformulariocontrol.ontouchmove=controlraton
+
+//document.addEventListener('touchmove', controlraton, { passive: false });
+//document.body.addEventListener('touchmove', controlraton, { passive: false });
+
+
+
+
+
+
 miformulariocontrol.style.visibility="visible"
 }
 
