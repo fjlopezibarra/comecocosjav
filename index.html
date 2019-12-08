@@ -58,18 +58,11 @@ miformulario.style.backgroundImage = "url('PORTADA.png')";
 miformulario.style.width="475px"
 miformulario.style.height="550px"
 miformulario.style.overflow="hidden"
-document.body.style.overflow="hidden"
+//document.body.style.overflow="hidden"
 document.body.appendChild(miformulario)
 
-
-
-
 //document.addEventListener('touchmove', controlraton, { passive: false });
-document.body.addEventListener('touchmove', controlraton, { passive: false });
-
-
-
-
+//document.body.addEventListener('touchmove', controlraton, { passive: false });
 
 var miformulariocontrol=document.createElement('input')
 miformulariocontrol.type='button'
@@ -79,12 +72,11 @@ miformulariocontrol.style.position="absolute"
 miformulariocontrol.style.top="600px"
 miformulariocontrol.style.left="258px"
 miformulariocontrol.style.backgroundImage = "url('PANELCONTROL.png')";
-miformulariocontrol.style.width="150px"
-miformulariocontrol.style.height="150px"
-miformulariocontrol.style.border="5px solid "+"blue"
+miformulariocontrol.style.width="156px"
+miformulariocontrol.style.height="156px"
+miformulariocontrol.style.border="3px solid "+"blue"
 miformulariocontrol.style.visibility="hidden"
 document.body.appendChild(miformulariocontrol)
-
 
 var boton1 = document.createElement('input');
 boton1.onclick=botonmovil; 
@@ -105,24 +97,16 @@ var mensaje=0
 
 //CONTROL BOTON MOVIL
 function botonmovil(){
-boton1.style.visibility="hidden"
-dispositivo=1
-if (mensaje==0){mensaje=1;alert("!ATENCION! Solo use este juego si esta conectado a una red Wifi. El uso con datos puede incurrir en gastos")}
-tecla1=1000;tecla2=1000;son=1;comenzar=setInterval(iniciojuego,200)
-//miformulariocontrol.onmousemove=controlraton
-//miformulariocontrol.onmousedown=controlraton
-//miformulariocontrol.onclick=controlraton
-miformulariocontrol.ontouchmove=controlraton
-miformulariocontrol.ontouchstart=controlraton
-//document.addEventListener('touchmove', controlraton, { passive: false });
-//document.body.addEventListener('touchmove', controlraton, { passive: false });
-
-
-
-
-
-
-miformulariocontrol.style.visibility="visible"
+	boton1.style.visibility="hidden"
+	dispositivo=1
+	if (mensaje==0){
+		mensaje=1;
+		alert("!ATENCION! Solo use este juego si esta conectado a una red Wifi. El uso con datos puede incurrir en gastos")
+		miformulariocontrol.ontouchmove=controlraton
+		miformulariocontrol.ontouchstart=controlraton
+	}
+	tecla1=1000;tecla2=1000;son=1;comenzar=setInterval(iniciojuego,200)
+	miformulariocontrol.style.visibility="visible"
 }
 
 
@@ -145,42 +129,23 @@ if (e.keyCode==38){dire[0]=4;return}
 }
 
 
-//CONTROL RATON
+//CONTROL DEL RATON
 
 function controlraton(e){
-//if(e.type === "touchmove"){        
-   // mouseEventType = "mousemove";
-//}
 e.preventDefault();
-
-
-
-//if (e.targetTouches.length == 1) { 
-//var touch = e.targetTouches[0]; 
-// con esto solo se procesa UN evento touch
-//alert(" se ha producido un touchstart en las siguientes cordenas: X " + touch.clientX + " en Y " + touch.clientY);
-//}
-
 var we=e.targetTouches.length
 var touch=e.targetTouches[we-1]
 ry=touch.clientY-miformulariocontrol.offsetTop
 rx=touch.clientX-miformulariocontrol.offsetLeft
-//ry=touch.clientY
-//rx=touch.clientX
-//ry=e.clientY-miformulariocontrol.offsetTop
-//rx=e.clientX-miformulariocontrol.offsetLeft
-
 //ry=e.offsetY
 //rx=e.offsetX
-//alert("ha funcionado    "+rx+" "+ry)
-if (rx>=50 && rx<=100 && ry>=50 && ry<=100){return}
-
+if (rx>=53 && rx<=103 && ry>=53 && ry<=103){return}
 a1y=0
 a1x=0
 a2y=0
-a2x=150
-a3y=75
-a3x=75
+a2x=156
+a3y=78
+a3x=78
 t0=(a1x-a3x)*(a2y-a3y)-(a1y-a3y)*(a2x-a3x)
 t1=(a1x-rx)*(a2y-ry)-(a1y-ry)*(a2x-rx)
 t2=(rx-a3x)*(a2y-a3y)-(ry-a3y)*(a2x-a3x)
@@ -188,18 +153,18 @@ t3=(a1x-a3x)*(ry-a3y)-(a1y-a3y)*(rx-a3x)
 if (t0>=0 && t1>=0 && t2>=0 && t3>=0){dire[0]=4;return}
 
 a1y=0
-a1x=150
-a2y=150
-a2x=150
+a1x=156
+a2y=156
+a2x=156
 t0=(a1x-a3x)*(a2y-a3y)-(a1y-a3y)*(a2x-a3x)
 t1=(a1x-rx)*(a2y-ry)-(a1y-ry)*(a2x-rx)
 t2=(rx-a3x)*(a2y-a3y)-(ry-a3y)*(a2x-a3x)
 t3=(a1x-a3x)*(ry-a3y)-(a1y-a3y)*(rx-a3x)
 if (t0>=0 && t1>=0 && t2>=0 && t3>=0){dire[0]=1;return}
 
-a1y=150
-a1x=150
-a2y=150
+a1y=156
+a1x=156
+a2y=156
 a2x=0
 t0=(a1x-a3x)*(a2y-a3y)-(a1y-a3y)*(a2x-a3x)
 t1=(a1x-rx)*(a2y-ry)-(a1y-ry)*(a2x-rx)
@@ -207,7 +172,7 @@ t2=(rx-a3x)*(a2y-a3y)-(ry-a3y)*(a2x-a3x)
 t3=(a1x-a3x)*(ry-a3y)-(a1y-a3y)*(rx-a3x)
 if (t0>=0 && t1>=0 && t2>=0 && t3>=0){dire[0]=2;return}
 
-a1y=150
+a1y=156
 a1x=0
 a2y=0
 a2x=0
@@ -217,15 +182,6 @@ t2=(rx-a3x)*(a2y-a3y)-(ry-a3y)*(a2x-a3x)
 t3=(a1x-a3x)*(ry-a3y)-(a1y-a3y)*(rx-a3x)
 if (t0>=0 && t1>=0 && t2>=0 && t3>=0){dire[0]=3;return}
 }
-
-
-
-
-
-
-
-
-
 
 
 //CREAR OBJETOS
