@@ -61,6 +61,16 @@ miformulario.style.overflow="hidden"
 document.body.style.overflow="hidden"
 document.body.appendChild(miformulario)
 
+
+
+
+document.addEventListener('touchmove', controlraton, { passive: false });
+document.body.addEventListener('touchmove', controlraton, { passive: false });
+
+
+
+
+
 var miformulariocontrol=document.createElement('input')
 miformulariocontrol.type='button'
 miformulariocontrol.name="miformulariocontrol"
