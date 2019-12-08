@@ -153,16 +153,24 @@ function controlraton(e){
 //}
 //e.preventDefault();
 
-//if(e.type === "click"){        
-  // e.mouseEventType = "onmousemove";
-   
-//}
+
+//posteriormente asignamos el manejador de eventos lo cual
+// se hace de manera convencional.
+//elementoTouch.addEventListener('touchstart', function(event){
+//Comprobamos si hay varios eventos del mismo tipo
+if (e.targetTouches.length == 1) { 
+var touch = event.targetTouches[0]; 
+// con esto solo se procesa UN evento touch
+alert(" se ha producido un touchstart en las siguientes cordenas: X " + touch.pageX + " en Y " + touch.pageY);
+}
+
+ry=touch.pageY
+rx=touch.pageX
 
 
-
-ry=e.offsetY
-rx=e.offsetX
-alert("ha funcionado    "+rx+" "+ry)
+//ry=e.offsetY
+//rx=e.offsetX
+//alert("ha funcionado    "+rx+" "+ry)
 if (rx>=50 && rx<=100 && ry>=50 && ry<=100){return}
 
 a1y=0
