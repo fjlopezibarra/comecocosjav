@@ -161,11 +161,11 @@ function controlraton(e){
 if (e.targetTouches.length == 1) { 
 var touch = event.targetTouches[0]; 
 // con esto solo se procesa UN evento touch
-alert(" se ha producido un touchstart en las siguientes cordenas: X " + touch.pageX + " en Y " + touch.pageY);
+alert(" se ha producido un touchstart en las siguientes cordenas: X " + touch.clientX + " en Y " + touch.clientY);
 }
 
-ry=touch.pageY
-rx=touch.pageX
+ry=touch.clienty
+rx=touch.clientX
 
 
 //ry=e.offsetY
