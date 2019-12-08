@@ -148,11 +148,21 @@ if (e.keyCode==38){dire[0]=4;return}
 //CONTROL RATON
 
 function controlraton(e){
-e.preventDefault();
+//if(e.type === "touchmove"){        
+   // mouseEventType = "mousemove";
+//}
+//e.preventDefault();
+
+//if(e.type === "click"){        
+  // e.mouseEventType = "onmousemove";
+   
+//}
+
+
 
 ry=e.offsetY
 rx=e.offsetX
-//alert("ha funcionado")
+alert("ha funcionado    "+rx+" "+ry)
 if (rx>=50 && rx<=100 && ry>=50 && ry<=100){return}
 
 a1y=0
