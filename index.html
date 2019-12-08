@@ -151,7 +151,7 @@ function controlraton(e){
 //if(e.type === "touchmove"){        
    // mouseEventType = "mousemove";
 //}
-e.preventDefault();
+//e.preventDefault();
 
 
 
@@ -160,8 +160,11 @@ e.preventDefault();
 // con esto solo se procesa UN evento touch
 //alert(" se ha producido un touchstart en las siguientes cordenas: X " + touch.clientX + " en Y " + touch.clientY);
 //}
-ry=e.clientY-miformulariocontrol.offsetTop
-rx=e.clientX-miformulariocontrol.offsetLeft
+
+var we=e.targetTouches.length
+var touch=e.targetTouches[we-1]
+ry=touch.clientY-miformulariocontrol.offsetTop
+rx=touch.clientX-miformulariocontrol.offsetLeft
 //ry=touch.clientY
 //rx=touch.clientX
 //ry=e.clientY-miformulariocontrol.offsetTop
