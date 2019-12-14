@@ -84,8 +84,8 @@ r4=touch.clientX-miformulario.offsetLeft
 
 if (r4>=(r2+sensibilidad)){dire[0]=1;r2=r4;return}
 if (r3>=(r1+sensibilidad)){dire[0]=2;r1=r3;return}
-if (r4<=(r2+sensibilidad)){dire[0]=3;r2=r4;return}
-if (r3<=(r1+sensibilidad)){dire[0]=4;r1=r3;return}	
+if (r4<=(r2-sensibilidad)){dire[0]=3;r2=r4;return}
+if (r3<=(r1-sensibilidad)){dire[0]=4;r1=r3;return}	
 }
 
 
