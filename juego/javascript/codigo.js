@@ -50,7 +50,8 @@ var r1=0
 var r2=0
 var r3=0
 var r4=0
-var sensibilidad=5
+var sensibilidad=10
+var vraton=1
 
 //CONTROL BOTON MOVIL
 function botonmovil(){
@@ -66,9 +67,11 @@ function botonmovil(){
 	}
 	tecla1=1000;tecla2=1000;son=1;comenzar=setInterval(iniciojuego,200)
 	miformulariocontrol.style.visibility="visible"
+	vraton=0
 }
 
 function pulsaraton(e){
+if (vraton==1){return}
 e.preventDefault();
 var touch=e.targetTouches[0]
 r1=touch.clientY-miformulario.offsetTop
@@ -76,6 +79,7 @@ r2=touch.clientX-miformulario.offsetLeft
 }
 
 function mueveraton(e){
+if (vraton==1){return}
 e.preventDefault();
 var we=e.targetTouches.length
 var touch=e.targetTouches[we-1]
@@ -422,6 +426,7 @@ if (son==0){sonido[8].play();sonido[8].loop=true;son=1}
 
 //INICIAR MOVIMIENTO PANTALLA INICIAL
 function juegonuevo(){
+	vraton=1
 	for (i=0;i<=4;i++){fruy[i]=0;frux[i]=0;afruy[i]=0;afrux[i]=0;tfruy[i]=0;tfrux[i]=0;cf[i]=0}
 	accion=0
 	miformulario.style.backgroundImage = "url('PORTADA.png')";
