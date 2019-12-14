@@ -46,6 +46,11 @@ miformulario.appendChild(boton1);
 
 var dispositivo=0
 var mensaje=0
+var r1=0
+var r2=0
+var r3=0
+var r4=0
+var sensibilidad=5
 
 //CONTROL BOTON MOVIL
 function botonmovil(){
@@ -56,10 +61,33 @@ function botonmovil(){
 		alert("!ATENCION! Solo use este juego si esta conectado a una red Wifi. El uso con datos puede incurrir en gastos")
 		miformulariocontrol.ontouchmove=controlraton
 		miformulariocontrol.ontouchstart=controlraton
+		miformulario.ontouchstart=pulsaraton
+		miformulario.ontouchmove=mueveraton
 	}
 	tecla1=1000;tecla2=1000;son=1;comenzar=setInterval(iniciojuego,200)
 	miformulariocontrol.style.visibility="visible"
 }
+
+function pulsaraton(e){
+e.preventDefault();
+var touch=e.targetTouches[0]
+r1=touch.clientY-miformulario.offsetTop
+r2=touch.clientX-miformulario.offsetLeft
+}
+
+function mueveraton(e){
+e.preventDefault();
+var we=e.targetTouches.length
+var touch=e.targetTouches[we-1]
+r3=touch.clientY-miformulario.offsetTop
+r4=touch.clientX-miformulario.offsetLeft
+
+if (r4>=(r2+sensibilidad)){dire[0]=1;r2=r4;return}
+if (r3>=(r1+sensibilidad)){dire[0]=2;r1=r3;return}
+if (r4<=(r2+sensibilidad)){dire[0]=3;r2=r4;return}
+if (r3<=(r1+sensibilidad)){dire[0]=4;r1=r3;return}	
+}
+
 
 
 //CONTROL DEL TECLADO
