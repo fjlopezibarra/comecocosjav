@@ -67,26 +67,29 @@ fondo.style.height="100%"
 fondo.style.visibility="visible"
 miformulario.appendChild(fondo)
 
-
-var botonir=document.createElement('input')
-botonir.onclick=jugar
-botonir.type='button'
-botonir.name="botonir"
-botonir.id='b1'
-botonir.style.backgroundImage = "url('IMGBOTON.png')";
-botonir.style.width="209px"
-botonir.style.height="66px"
+var botonir=new Image()
+botonir.onmousedown=jugar1
+botonir.onmouseup=jugar2
+botonir.src = "IMGBOTON1.png"
+botonir.style.width="203px"
+botonir.style.height="86px"
 botonir.style.position="absolute"
-botonir.style.margin = "540px 40%" //" 100px 100px 100px"
+botonir.style.margin = "520px 40%" //" 100px 100px 100px"
 botonir.style.display="block";
+botonir.style.border="0px"
 //botonir.style.border="3px solid "+"blue"
 miformulario.appendChild(botonir)
 
 
+function jugar1(e){
+e.preventDefault()
+botonir.src = "IMGBOTON2.png"	
+}
 
-
-function jugar(){
-document.location.href="https://fjlopezibarra.github.io/comecocosjav/juego/index.html"
+function jugar2(e){
+e.preventDefault()
+botonir.src = "IMGBOTON1.png"
+document.location.href="../mipaginaweb/juego/come.html"
 }
 
 
