@@ -1,0 +1,101 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:70.85pt 3.0cm 70.85pt 3.0cm;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=ES>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span></b></p>
+
+</div>
+
+<script>
+
+var miformulario=document.createElement("form")
+miformulario.type="form"
+miformulario.name="miformulario"
+miformulario.style.position="absolute"
+miformulario.style.top="0px"
+miformulario.style.left="0px"
+miformulario.style.width="100%"
+miformulario.style.height="100%"
+miformulario.style.backgroundColor = "black"
+miformulario.style.overflow="hidden"
+document.body.style.overflow="hidden"
+document.body.appendChild(miformulario)
+
+var fondo=new Image()
+fondo.src = "FONDOPAGINA.jpg"
+fondo.style.position="absolute"
+fondo.style.top="0px"
+fondo.style.left="0px"
+fondo.style.width="100%"
+fondo.style.height="100%"
+fondo.style.visibility="visible"
+miformulario.appendChild(fondo)
+
+var botonir=new Image()
+botonir.onmousedown=jugar1
+botonir.onmouseup=jugar2
+botonir.src = "IMGBOTON1.png"
+botonir.style.width="203px"
+botonir.style.height="86px"
+botonir.style.position="absolute"
+botonir.style.margin = "520px 40%" //" 100px 100px 100px"
+botonir.style.display="block";
+botonir.style.border="0px"
+//botonir.style.border="3px solid "+"blue"
+miformulario.appendChild(botonir)
+
+
+function jugar1(e){
+e.preventDefault()
+botonir.src = "IMGBOTON2.png"	
+}
+
+function jugar2(e){
+e.preventDefault()
+botonir.src = "IMGBOTON1.png"
+document.location.href="../mipaginaweb/juego/come.html"
+}
+
+
+
+</script>
+
+</body>
+
+</html>
