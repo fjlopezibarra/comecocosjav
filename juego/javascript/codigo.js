@@ -433,7 +433,7 @@ kk=0;llenar()
 cronocome=setInterval(flascome,200)
 cronofan=setInterval(flasfan,200)
 document.onclick=repitesonido
-cartelera.onload=juegonuevo()
+miformulario.onload=juegonuevo()
  
 
 
