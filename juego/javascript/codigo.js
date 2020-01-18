@@ -1220,7 +1220,7 @@ function controlcontador(a){
 				situ[i]=1
 				break;
 				case 4: //muerte
-				situ[i]=1
+				//situ[i]=1
 				break;
 				case 5: //muerte caja
 				situ[i]=0
@@ -1239,6 +1239,7 @@ fancanvas[a].style.left=posix[a]+"px"
 function caja(a){
 if(posiy[a]<=234){veloy[a]=1/a;dire[a]=2;return}
 if(posiy[a]>=265){veloy[a]=-1/a;dire[a]=4;return}
+if (situ[a]==5 && contadorini==0){situ[a]=0}
 if (situ[a]==5){return}
 var c= Math.round(Math.random()*(100-0)+parseInt(0));
 	if (c==a){
