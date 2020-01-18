@@ -430,11 +430,15 @@ pon=0
 dia1=comecanvas.width
 dia2=comecanvas.height
 kk=0;llenar()
+document.onclick=repitesonido
+cargapagina =setTimeout(cargada,1500)
+
+function cargada(){
+clearInterval(cargapagina)
 cronocome=setInterval(flascome,200)
 cronofan=setInterval(flasfan,200)
-document.onclick=repitesonido
-miformulario.onload=juegonuevo()
- 
+juegonuevo()
+} 
 
 
 function repitesonido(){
